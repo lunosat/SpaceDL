@@ -2,9 +2,9 @@
 
 # Idiomas
 
-[🇺🇸 Inglês]()
-[🇪🇸 Espanhol]()
-[🇧🇷 Português (Brasil)]()
+- [🇺🇸 Inglês](https://github.com/lunosat/SpaceDL/blob/main/readme/english.md)
+- [🇪🇸 Espanhol](https://github.com/lunosat/SpaceDL/blob/main/readme/spanish.md)
+- [🇧🇷 Português (Brasil)](https://github.com/lunosat/SpaceDL/blob/main/README.md)
 
 # Introdução
 

@@ -2,23 +2,23 @@
 
 # Idiomas
 
-[🇺🇸 Inglés](https://github.com/lunosat/SpaceDL/readmes/english.md)
-[🇪🇸 Español](https://github.com/lunosat/SpaceDL/readmes/spanish.md)
-[🇧🇷 Portugués (Brasil)](https://github.com/lunosat/SpaceDL)
+- [🇺🇸 Inglés](https://github.com/lunosat/SpaceDL/blob/main/readme/english.md)
+- [🇪🇸 Español](https://github.com/lunosat/SpaceDL/blob/main/readme/spanish.md)
+- [🇧🇷 Portugués (Brasil)](https://github.com/lunosat/SpaceDL/blob/main/README.md)
 
 # Introducción
 
-Creé este proyecto con la intención de estudiar diversas redes sociales y sitios web, analizando cómo almacenan su contenido, la facilidad o dificultad para obtener esta información, si alguien ha hecho algo similar y, principalmente, intentar implementar esto. Inicialmente, estoy desarrollando la base completa con soporte para las tres principales redes sociales: YouTube, Instagram y TikTok.
+Creé este proyecto con la intención de estudiar diversas redes sociales y sitios web, analizando cómo almacenan sus contenidos, la facilidad o dificultad de obtener esa información, si alguien ya ha hecho algo similar y, principalmente, intentar implementar esto. Inicialmente, estoy desarrollando la base completa con soporte para las tres principales redes sociales: YouTube, Instagram y TikTok.
 
-Todo el código se basó en documentación y publicaciones de otros usuarios, usándolos solo como referencia y sin ninguna copia directa. En todos los casos, busqué estudiar cada función, herramienta o cualquier otra tecnología con la que no estuviera familiarizado.
+Todo el código se basó en documentación y publicaciones de otros usuarios, usándolos solo como referencia y sin ninguna copia directa. En todos los casos, busqué estudiar cada función, herramienta u otra tecnología con la que no estuviera familiarizado.
 
 # El Objetivo
 
-El objetivo principal del bot es permitir que los usuarios realicen la descarga de videos, audios, imágenes, entre otros, que estén públicos en diversos sitios web, principalmente redes sociales.
+El objetivo principal del bot es permitir que los usuarios descarguen videos, audios, imágenes, entre otros, que estén públicos en diversos sitios, principalmente redes sociales.
 
-Utilizando Consultas Inline, permitimos que los archivos se envíen directamente a cualquier chat, sin necesidad de acceder al bot para realizar esta acción. Aunque esta funcionalidad existe, la principal es el uso de Consultas Inline.
+Utilizando Inline Queries, permitimos que los archivos sean enviados directamente a cualquier chat, sin necesidad de acceder al bot para realizar esta acción. Aunque esta funcionalidad existe, la principal es el uso de Inline Queries.
 
-P.D.: El uso indebido y sus responsabilidades son totalmente del usuario.
+P.D.: El uso indebido y sus responsabilidades son de total posesión del usuario.
 
 # Tecnologías
 
@@ -41,7 +41,7 @@ Bibliotecas de terceros utilizadas para la integración:
 
 ## Base de Datos
 
-Elegí utilizar MongoDB por su practicidad y por la cuota gratuita de almacenamiento disponible. Posteriormente, tengo la intención de implementar un sistema más robusto para la gestión de datos.
+Elegí utilizar MongoDB por su practicidad y por la cuota gratuita de almacenamiento disponible. Posteriormente, tengo la intención de implementar un sistema más robusto para la gestión de los datos.
 
 # Configuración
 
@@ -54,9 +54,9 @@ Elegí utilizar MongoDB por su practicidad y por la cuota gratuita de almacenami
 
 ## Variables de Entorno
 
-Telegram: Para comenzar, es necesario acceder a [BotFather](https://t.me/botfather) para crear y obtener el token de tu bot. Recuerda activar las Consultas Inline para tu bot.
+Telegram: Para comenzar, es necesario acceder a [BotFather](https://t.me/botfather) para crear y obtener el token de tu bot. Recuerda activar las Inline Queries para tu bot.
 
-Base de Datos: Puedes usar MongoDB Atlas o alojar tu propia base de datos, según tu preferencia.
+Base de Datos: Puedes utilizar MongoDB Atlas o alojar tu propia base de datos, según tu preferencia.
 
 `.env`
 ```js
@@ -89,4 +89,4 @@ yarn start
 
 # ¡Gracias!
 
-Realmente no sé si alguien llegó hasta aquí, pero si lo hiciste, te agradezco mucho por darme la oportunidad de presentar un poco de mi evolución en el área de mi pasión :)
+Realmente no sé si alguien ha llegado hasta aquí, pero si lo has hecho, te agradezco mucho por darme la oportunidad de presentar un poco de mi evolución en el área de mi pasión :)

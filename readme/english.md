@@ -2,36 +2,36 @@
 
 # Languages
 
-[🇺🇸 English](https://github.com/lunosat/SpaceDL/readmes/english.md)
-[🇪🇸 Spanish](https://github.com/lunosat/SpaceDL/readmes/spanish.md)
-[🇧🇷 Portuguese (Brazil)](https://github.com/lunosat/SpaceDL)
+- [🇺🇸 English](https://github.com/lunosat/SpaceDL/blob/main/readme/english.md)
+- [🇪🇸 Spanish](https://github.com/lunosat/SpaceDL/blob/main/readme/spanish.md)
+- [🇧🇷 Portuguese (Brazil)](https://github.com/lunosat/SpaceDL/blob/main/README.md)
 
 # Introduction
 
-I created this project with the intention of studying various social networks and websites, analyzing how they store their content, the ease or difficulty of obtaining this information, whether anyone has done something similar, and, most importantly, trying to implement it. Initially, I am developing the complete base with support for the three main social networks: YouTube, Instagram, and TikTok.
+I created this project with the intention of studying various social networks and websites, analyzing how they store their content, the ease or difficulty of obtaining that information, if anyone has done something similar, and, most importantly, attempting to implement it. Initially, I am developing the complete base with support for the three main social networks: YouTube, Instagram, and TikTok.
 
-All the code was based on documentation and posts from other users, using them only as references and without any direct copying. In all cases, I aimed to study each function, tool, or any other technology with which I was not familiar.
+All the code was based on documentation and posts from other users, using them only as reference and without any direct copying. In all cases, I sought to study each function, tool, or any other technology with which I was not familiar.
 
-# The Objective
+# The Goal
 
-The main objective of the bot is to allow users to download videos, audios, images, and more that are publicly available on various websites, primarily social networks.
+The main goal of the bot is to allow users to download videos, audios, images, among other things, that are public on various sites, primarily social networks.
 
-By using Inline Queries, we allow files to be sent directly to any chat without the need to access the bot to perform this action. Although this functionality exists, the main feature is the use of Inline Queries.
+Using Inline Queries, we allow files to be sent directly to any chat, without needing to access the bot to perform this action. Although this functionality exists, the main feature is the use of Inline Queries.
 
-P.S.: Misuse and its responsibilities are entirely the user's.
+P.S.: Misuse and its responsibilities are entirely the user's own.
 
 # Technologies
 
 ## Libraries
 
-For development, I mainly used Node.js (18.20.3) and the following libraries for the general functioning of the application:
+For development, I primarily used Node.js (18.20.3) and the following libraries for the general functionality of the application:
 
 - [I18n](https://www.npmjs.com/package/i18n)
 - [Node.js Telegram Bot API](https://www.npmjs.com/package/node-telegram-bot-api)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 - [Mongoose](https://www.npmjs.com/package/mongoose)
 
-For integration with social networks, I will initially use some public libraries, studying how they achieved their objectives. However, in the future, I plan to replace these libraries with my own code, more organized and customized.
+For integration with social networks, I will initially use some public libraries, studying how they achieved their goals. However, in the future, I plan to replace these libraries with my own, more organized and customized code.
 
 Third-party libraries used for integration:
 
@@ -41,9 +41,9 @@ Third-party libraries used for integration:
 
 ## Database
 
-I chose to use MongoDB for its practicality and the free storage quota available. Later, I plan to implement a more robust system for data management.
+I chose to use MongoDB for its convenience and the free storage quota available. Later, I plan to implement a more robust system for data management.
 
-# Configuration
+# Setup
 
 ## Dependencies
 
@@ -89,4 +89,4 @@ yarn start
 
 # Thank You!
 
-I really don’t know if anyone has made it this far, but if you have, I am very grateful for giving me the opportunity to present a bit of my progress in the field of my passion :)
+I really don’t know if anyone has made it this far, but if you have, I greatly appreciate you giving me the opportunity to showcase a bit of my progress in the area of my passion :)
