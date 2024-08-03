@@ -43,8 +43,6 @@ const callbackQuery = async (evt) => {
                     ]
                 }
             })
-
-            await bot.answerCallbackQuery(evt.id)
         }
 
         if(callback === 'donate'){
@@ -54,19 +52,43 @@ const callbackQuery = async (evt) => {
                 amount,
             }]
             await bot.sendInvoice(id, i18n.__('donate.title'), i18n.__('donate.description'), 'donate_amout_by_user', '', 'XTR', labelPrice)
-            await bot.answerCallbackQuery(evt.id)
-            return
         }
 
         if(callback === 'help'){
             await bot.sendMessage(id, 'https://telegra.ph/Eu-estou-no-fundo-08-03')
         }
 
-        if(callback === 'language_set'){
-            const user = await User.findOneAndUpdate({ tgId: id }, {language: args[0]})
-            await bot.sendMessage(id, textFormatter(i18n.__('language.changed', args[0])))
-            await bot.answerCallbackQuery(evt.id)
+        if(callback === 'language'){
+            const text = textFormatter(i18n.__('language.message')) 
+            bot.sendMessage(id, text, {
+                parse_mode: 'markdownv2',
+                reply_markup: {
+                    inline_keyboard: [[
+                            {
+                                text: i18n.__('language.english'),
+                                callback_data: JSON.stringify({callback: "language_set", args: ['en']})
+                            }
+                        ], [
+                            {
+                                text: i18n.__('language.portuguese'),
+                                callback_data: JSON.stringify({callback: "language_set", args: ['pt-br']})
+                            }
+                        ], [
+                            {
+                                text: i18n.__('language.spanish'),
+                                callback_data: JSON.stringify({callback: "language_set", args: ['es']})
+                            }
+                        ]
+                    ]
+                }
+            })
         }
+
+        if(callback === 'language_set'){
+            await User.findOneAndUpdate({ tgId: id }, {language: args[0]})
+            await bot.sendMessage(id, textFormatter(i18n.__('language.changed', args[0])))
+        }
+        await bot.answerCallbackQuery(evt.id)
     } catch (error) {
         console.log(error)
     }
