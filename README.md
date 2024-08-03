@@ -1,5 +1,13 @@
 # Space Downloader
 
+# Idiomas
+
+[🇺🇸 Inglês]()
+[🇪🇸 Espanhol]()
+[🇧🇷 Português (Brasil)]()
+
+# Introdução
+
 Criei este projeto com a intenção de estudar diversas redes sociais e sites, analisando como eles armazenam seus conteúdos, a facilidade ou dificuldade de obter essas informações, se alguém já fez algo semelhante e, principalmente, tentar implementar isso. Inicialmente, estou desenvolvendo a base completa com suporte às três principais redes sociais: YouTube, Instagram e TikTok.
 
 Todo o código foi baseado em documentação e posts de outros usuários, utilizando-os apenas como referência e sem qualquer cópia direta. Em todos os casos, busquei estudar cada função, ferramenta ou qualquer outra tecnologia com a qual eu não tivesse familiaridade.
