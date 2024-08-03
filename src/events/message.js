@@ -1,11 +1,19 @@
 import isValidUrl from "../helpers/isValidUrl.js"
 import bot from '../app.js'
 import downloadProcessor from "../downloaders/downloaderProcessor.js"
+import User from "../models/User.js"
 
 const messageEvent = async (evt) => {
     try {
         const { id } = evt.from
         const { text } = evt
+
+        const user = await User.findOne({ tgId: id })
+        if(!user){
+            await User.create({ tgId: id })
+
+            console.log(`New user with id ${id} registered.`)
+        }
 
         if(text.startsWith('/')) return
 

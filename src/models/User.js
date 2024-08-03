@@ -5,6 +5,11 @@ const userSchema = new Schema({
         type: String,
         required: true,
         unique: true
+    }, 
+    language: {
+        type: String,
+        enums: ['pt-br', 'en', 'es'],
+        default: 'pt-br'
     }
 })
 

@@ -1,6 +1,7 @@
 import bot from "../app.js"
 import i18n from "../config/i18n.js"
 import textFormatter from "../helpers/textFormatter.js"
+import User from "../models/User.js"
 
 const callbackQuery = async (evt) => {
     try {
@@ -59,6 +60,12 @@ const callbackQuery = async (evt) => {
 
         if(callback === 'help'){
             await bot.sendMessage(id, 'https://telegra.ph/Eu-estou-no-fundo-08-03')
+        }
+
+        if(callback === 'language_set'){
+            const user = await User.findOneAndUpdate({ tgId: id }, {language: args[0]})
+            await bot.sendMessage(id, textFormatter(i18n.__('language.changed', args[0])))
+            await bot.answerCallbackQuery(evt.id)
         }
     } catch (error) {
         console.log(error)

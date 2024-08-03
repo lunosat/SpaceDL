@@ -12,5 +12,12 @@
 		"description": "Confirmando abaixo você nos ajuda a manter nossos servidores e o bot totalmente gratuíto, muito obrigado!!",
 		"amount_byuser": "Valor escolhido pelo doador",
 		"invalid_amount": "_Não conseguimos entender o valor que você digitou, tenha certeza de ser um número sem pontos ou vírgulas_"
+	},
+	"language": {
+		"message": "_Selecione o idioma de sua preferência:_",
+		"changed": "_Seu idioma foi alterado com sucesso para %s, você pode alterar novamente utilizando o comando /language._",
+		"english": "🇺🇸 Inglês",
+		"portuguese": "🇧🇷 Português (Brasil)",
+		"spanish": "🇪🇸 Espanhol"
 	}
 }
