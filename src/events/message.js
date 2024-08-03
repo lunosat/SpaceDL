@@ -7,8 +7,6 @@ const messageEvent = async (evt) => {
         const { id } = evt.from
         const { text } = evt
 
-        // console.log(evt)
-
         if(text.startsWith('/')) return
 
         await bot.sendMessage(id, `Explorando os cosmos... um momento`)
