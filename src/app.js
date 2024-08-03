@@ -1,5 +1,6 @@
-import dotenv from 'dotenv'
 import TelegramBot from 'node-telegram-bot-api'
+
+import connectDb from './config/database.js'
 
 /* Events */
 
@@ -10,7 +11,8 @@ import commandProcessor from './commands/commandProcessor.js'
 let bot
 
 (async () => {
-    dotenv.config()
+    await connectDb()
+    
     const token = process.env.TG_TOKEN
     bot = new TelegramBot(token, { polling: true })
     
