@@ -12,18 +12,18 @@ const handler = async (msg) => {
             reply_markup: {
                 inline_keyboard: [[
                         {
-                            text: `📚` + i18n.__('buttons.help'),
-                            callback_data: 'button_help'
+                            text: `📚 ` + i18n.__('buttons.help'),
+                            callback_data: JSON.stringify({callback: "help", args: []})
                         }
                     ], [
                         {
-                            text: `🌟` + i18n.__('buttons.donate'),
-                            callback_data: 'button_donate'
+                            text: `🌟 ` + i18n.__('buttons.donate'),
+                            callback_data: JSON.stringify({callback: "welcome_donate", args: []})
                         }
                     ], [
                         {
-                            text: `🌐` + i18n.__('buttons.language'),
-                            callback_data: 'button_language'
+                            text: `🌐 ` + i18n.__('buttons.language'),
+                            callback_data: JSON.stringify({callback: "language", args: [10]})
                         }
                     ]
                 ]

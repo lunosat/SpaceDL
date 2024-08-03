@@ -4,5 +4,13 @@
 		"help": "Ajuda",
 		"donate": "Doação",
         "language": "Idioma"
+	},
+	"donate": {
+		"message": "_Ficamos muito felizes em saber que deseja ajudar %s!_\n\n_Abaixo você pode escolher quantas estrelas deseja nos doar, as estrelas é a nova forma de pagamento que o Telegram nos apresentou, totalmente segura e sem riscos!_\n\n_Deseja doar um valor diferente dos disponíveis abaixo? Utilize o comando /donate seguido da quantia de estrelas que deseja doar, por exemplo: /donate 300_\n\n_Ainda não temos uma recompensa para agradecer a sua doação, mas pode ter certeza que ela ficara guardada para sempre e com certeza um dia será recompensada!_",
+		"title": "Doação Space Downloader",
+		"somuch": "_Wowwww, infelizmente só temos permissão para gerar faturas de até ⭐ 100.000 :/_",
+		"description": "Confirmando abaixo você nos ajuda a manter nossos servidores e o bot totalmente gratuíto, muito obrigado!!",
+		"amount_byuser": "Valor escolhido pelo doador",
+		"invalid_amount": "_Não conseguimos entender o valor que você digitou, tenha certeza de ser um número sem pontos ou vírgulas_"
 	}
 }
