@@ -1,0 +1,8 @@
+{
+	"welcome_message": "_Olá %s! Seja bem vindo ao Space Downloader, o seu bot para realizar downloads de imagens, vídeos e áudios de diversas redes sociais e sites._\n\n_Se lhe for conveniente considere fazer uma doação para ajudar a manter nossos servidores :)_",
+	"buttons": {
+		"help": "Ajuda",
+		"donate": "Doação",
+        "language": "Idioma"
+	}
+}

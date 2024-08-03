@@ -1,0 +1,19 @@
+{
+    "instagram": {
+        "validUrls": [
+            "www.instagram.com"
+        ]
+    },
+    "tiktok": {
+        "validUrls": [
+            "vm.tiktok.com",
+            "tiktok.com"
+        ]
+    },
+    "youtube": {
+        "validUrls": [
+            "www.youtube.com",
+            "youtu.be"
+        ]
+    }
+}
