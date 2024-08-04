@@ -1,12 +1,20 @@
 import bot from '../app.js'
 import downloadProcessor from '../downloaders/downloaderProcessor.js'
 import isValidUrl from '../helpers/isValidUrl.js'
+import User from '../models/User.js'
 
 const inlineQuery = async (evt) => {
     try {
         const { id, query } = evt
 
         // console.log(evt)
+
+        const user = await User.findOne({ tgId: id })
+        if(!user){
+            await User.create({ tgId: id })
+
+            console.log(`New user with id ${id} registered.`)
+        }
 
         console.log(isValidUrl(query))
 
