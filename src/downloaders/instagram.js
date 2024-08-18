@@ -1,5 +1,4 @@
 import youtubedl from "youtube-dl-exec"
-import fs from "fs"
 
 const instagramDownloader = async (url, type) => {
     try {
@@ -9,7 +8,7 @@ const instagramDownloader = async (url, type) => {
             noCheckCertificates: true,
             noWarnings: true,
             preferFreeFormats: true,
-            addHeader: ['referer:instagram.com', 'user-agent:googlebot']
+            addHeader: ['referer:instagram.com', 'user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36']
         })
 
         let results = []
@@ -46,9 +45,6 @@ const instagramDownloader = async (url, type) => {
         if (type === 'direct') {
             results = data.formats
         }
-        // console.log(results)
-
-        // fs.writeFileSync("ig.json", JSON.stringify(data.formats))
 
         return results
     } catch (error) {
