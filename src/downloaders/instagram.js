@@ -1,27 +1,55 @@
-import instagramGetUrl from 'instagram-url-direct'
+import youtubedl from "youtube-dl-exec"
+import fs from "fs"
 
 const instagramDownloader = async (url, type) => {
     try {
-        const { url_list } = await instagramGetUrl(url)
-        // console.log(data)
+
+        const data = await youtubedl(url, {
+            dumpSingleJson: true,
+            noCheckCertificates: true,
+            noWarnings: true,
+            preferFreeFormats: true,
+            addHeader: ['referer:instagram.com', 'user-agent:googlebot']
+        })
 
         let results = []
-        if(type === 'inline'){
-            url_list.forEach((e, i)=> {
-                results.push({
-                    type: 'video',
-                    id: i + 1,
-                    video_url: e,
-                    mime_type: 'video/mp4',
-                    thumbnail_url: 'https://cdn6.aptoide.com/imgs/2/d/6/2d62805d3ab029990520f0ccebb0fad1_icon.jpg',
-                    title: 'Instagram Vídeo'
-                })
+        let id = 1
+        if (type === 'inline') {
+            data.formats.forEach((e, i) => {
+                if(e.format_note?.includes('DASH')){
+                    return
+                }
+                if(e.ext === 'mp4'){
+                    results.push({
+                        type: 'video',
+                        id: id,
+                        video_url: e.url,
+                        mime_type: 'video/mp4',
+                        thumbnail_url: data.thumbnail,
+                        title: `${data.title.slice(10)[0]} - 📹 Vídeo | ${e.resolution}`
+                    })
+                }
+
+                if(e.ext === 'm4a'){
+                    results.push({
+                        type: 'audio',
+                        id: id,
+                        audio_url: e.url,
+                        title: `${data.title.slice(10)[0]} - 🎶 Áudio | ${e.resolution}`,
+                    })
+                }
+
+                id++
             });
         }
 
-        if(type === 'direct'){
-            results = url_list
+        if (type === 'direct') {
+            results = data.formats
         }
+        // console.log(results)
+
+        // fs.writeFileSync("ig.json", JSON.stringify(data.formats))
+
         return results
     } catch (error) {
         console.log(error)

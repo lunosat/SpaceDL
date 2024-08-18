@@ -15,5 +15,11 @@
             "www.youtube.com",
             "youtu.be"
         ]
+    },
+    "x": {
+        "validUrls": [
+            "x.com",
+            "twitter.com"
+        ]
     }
 }

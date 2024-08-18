@@ -1,62 +1,54 @@
-// import youtubedl from "youtube-dl-exec";
+import youtubedl from "youtube-dl-exec";
 import TikTok from '@tobyg74/tiktok-api-dl'
 
 const tiktokDownloader = async (url, type) => {
     try {
-        const data = await TikTok.Downloader(url, {
-            version: 'v1'
+        const data = await youtubedl(url, {
+            dumpSingleJson: true,
+            noCheckCertificates: true,
+            noWarnings: true,
+            preferFreeFormats: true,
+            addHeader: ['referer:tiktok.com', 'user-agent:googlebot']
         })
-        /* const data = await youtubedl.exec(url, {
-            output: 'downloaded_tiktok_video.mp4' // Simplified output filename
-        });*/
-
-        if (!data.status) return new Error('status error')
 
         const results = []
-
-        const desc = `Downloaded using Space Downloader\n\n@ludlbot@`
-        console.log(desc)
 
         let id = 1
 
         if(type === 'inline'){
-            for (let item in data.result) {
-                console.log(item, data.result[item])
-                if(item === 'music'){
-                    results.push({
-                        type: 'audio',
-                        id: id,
-                        audio_url: data.result[item].playUrl[0],
-                        title: '🎶 Áudio',
-                        caption: desc
-                    })
-                }
-    
-                if(item === 'video' || item === 'video1' || item === 'video2' || item === 'videoHD' || item === 'videoWatermark'){
+            data.formats.forEach((e) => {
+                if(e.ext === 'mp4'){
                     results.push({
                         type: 'video',
                         id: id,
-                        video_url: data.result[item].downloadAddr[0],
+                        video_url: e.url,
                         mime_type: 'video/mp4',
-                        thumbnail_url: data.result[item].originCover[0],
-                        title: '📹 Vídeo',
-                        caption: desc
+                        thumbnail_url: data.thumbnail,
+                        title: `${data.title.slice(10)[0]} - 📹 Vídeo | ${e.resolution}`
                     })
                 }
+
+                if(e.ext === 'm4a'){
+                    results.push({
+                        type: 'audio',
+                        id: id,
+                        audio_url: e.url,
+                        title: `${data.title.slice(10)[0]} - 🎶 Áudio | ${e.resolution}`,
+                    })
+                }
+
                 id++
-            }
+            })
         }
 
         if(type === 'direct'){
 
         }
-        // console.log(results)
-        //console.log(data.video); 
+        console.log(results)
         return results;
     } catch (error) {
         console.error(error);
     }
 }
 
-//tiktokDownloader('https://vm.tiktok.com/ZMrQ4Gokg/');
 export default tiktokDownloader;

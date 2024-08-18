@@ -4,7 +4,7 @@ import textFormatter from "../helpers/textFormatter.js"
 
 const handler = async (msg) => {
     try {
-        const { id, first_name } = msg.from
+        const { id } = msg.from
 
         const text = textFormatter(i18n.__('language.message')) 
         bot.sendMessage(id, text, {
