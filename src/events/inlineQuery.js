@@ -7,11 +7,13 @@ const inlineQuery = async (evt) => {
     try {
         const { id, query } = evt
 
+        
+
         // console.log(evt)
 
-        const user = await User.findOne({ tgId: id })
+        const user = await User.findOne({ tgId: evt.from.id })
         if(!user){
-            await User.create({ tgId: id })
+            await User.create({ tgId: evt.from.id })
 
             console.log(`New user with id ${id} registered.`)
         }
